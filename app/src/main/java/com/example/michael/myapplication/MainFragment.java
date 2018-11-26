@@ -37,7 +37,7 @@ public class MainFragment extends Fragment implements MyDataAdapter.ListItemClic
 
         String projection[] = {"_ID", "firstname", "lastname"};
         Cursor myData = getActivity().getContentResolver().query(CONTENT_URI, projection, null, null, null);
-        Toast.makeText(getContext(), "myData: " + myData.getCount(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(getContext(), "myData: " + myData.getCount(), Toast.LENGTH_LONG).show();
         _dataAdapter = new MyDataAdapter(myData, this);
         _dataRv.setAdapter(_dataAdapter);
 
@@ -57,7 +57,7 @@ public class MainFragment extends Fragment implements MyDataAdapter.ListItemClic
             String selection = "_ID = ?";
             String selectionArgs[] = { id };
             Uri selectedData = CONTENT_URI.buildUpon().appendPath(id).build();
-            Toast.makeText(getContext(), selectedData.toString(), Toast.LENGTH_LONG).show();
+//            Toast.makeText(getContext(), selectedData.toString(), Toast.LENGTH_LONG).show();
             Cursor Data = getActivity().getContentResolver().query(selectedData, null, selection, selectionArgs, null);
             detailFragment.setData(Data);
 

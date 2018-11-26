@@ -49,7 +49,7 @@ public class DetailFragment extends Fragment {
             String selection = "_ID = ?";
             String selectionArgs[] = {id};
             Uri selectedData = CONTENT_URI.buildUpon().appendPath(id).build();
-            Toast.makeText(getContext(), selectedData.toString(), Toast.LENGTH_LONG).show();
+//            Toast.makeText(getContext(), selectedData.toString(), Toast.LENGTH_LONG).show();
             _Data = getActivity().getContentResolver().query(selectedData, null, selection, selectionArgs, null);
         }
 
