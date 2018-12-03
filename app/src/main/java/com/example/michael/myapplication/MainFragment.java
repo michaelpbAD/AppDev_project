@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,6 +22,7 @@ public class MainFragment extends Fragment implements MyDataAdapter.ListItemClic
     RecyclerView _dataRv;
     MyDataAdapter _dataAdapter;
 
+
     public MainFragment() {
         // Required empty public constructor
     }
@@ -30,6 +32,14 @@ public class MainFragment extends Fragment implements MyDataAdapter.ListItemClic
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         _dataRv = rootView.findViewById(R.id.rv_myData);
+
+        FloatingActionButton FPbAdd = rootView.findViewById(R.id.FPbAdd);
+        FPbAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "add buton klikt", Toast.LENGTH_LONG).show();
+            }
+        });
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         _dataRv.setLayoutManager(linearLayoutManager);

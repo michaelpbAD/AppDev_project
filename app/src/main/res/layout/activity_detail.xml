@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.michael.myapplication.DetailActivity">
+    tools:context="com.example.michael.myapplication.DetailActivity"
+    android:background="@color/backgroundMain">
 
     <fragment
         android:id="@+id/fr_detail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="com.example.michael.myapplication.DetailFragment" />
+        android:layout_height="wrap_content"
+        android:name="com.example.michael.myapplication.DetailFragment"/>
 
 </android.support.constraint.ConstraintLayout>

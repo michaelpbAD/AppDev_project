@@ -1,9 +1,10 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.michael.myapplication.DetailFragment">
+    tools:context="com.example.michael.myapplication.DetailFragment"
+    style="@style/MyBoks">
 
     <TextView
         android:id="@+id/tv_firstname"
@@ -42,7 +43,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
         android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tv_status"
         app:layout_constraintTop_toBottomOf="@+id/tv_status"
         tools:text="comment" />

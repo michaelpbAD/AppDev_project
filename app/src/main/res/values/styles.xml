@@ -8,4 +8,25 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyBoks">
+        <item name="android:background">@color/backgroundBoks</item>
+        <item name="android:radius">8dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:elevation">8dp</item>
+
+    </style>
+
+    <style name="MyListBoks">
+        <item name="android:background">@color/backgroundBoks</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:elevation">8dp</item>
+
+    </style>
+
+    <style name="MyList" >
+        <item name="android:background">@color/backgroundBoks</item>
+
+    </style>
+
 </resources>

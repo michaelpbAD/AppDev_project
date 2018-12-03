@@ -6,6 +6,7 @@
 
     <TextView
         android:id="@+id/tv_firstname"
+        android:text="firstname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,13 +21,12 @@
         android:id="@+id/tv_lastname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/tv_firstname"
-        android:textSize="16sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"/>
+        android:text="lastname"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/tv_firstname"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="match_parent"
