@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity implements MyDataAdapter.Lis
 
 //        _MyDataRv = findViewById(R.id.rv_myData);
 
-        DatabaseFiller dbFiller = new DatabaseFiller(this);
-
-        Cursor testResult = getContentResolver().query(CONTENT_URI, null, null, null, null);
-        if(testResult.getCount()==0){
-            dbFiller.AddValues();
-        }
+//        DatabaseFiller dbFiller = new DatabaseFiller(this);
+//
+//        Cursor testResult = getContentResolver().query(CONTENT_URI, null, null, null, null);
+//        if(testResult.getCount()==0){
+//            dbFiller.AddValues();
+//        }
 
         if(findViewById(R.id.ll_twopane) != null) {
             _MasterDetail = true;

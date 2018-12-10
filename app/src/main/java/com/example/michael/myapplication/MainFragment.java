@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.michael.myapplication.utilities.DatabaseFiller;
+
 import static com.example.michael.myapplication.data.MyDataContract.MyData.CONTENT_URI;
 
 
@@ -37,13 +39,22 @@ public class MainFragment extends Fragment implements MyDataAdapter.ListItemClic
         FPbAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "add buton klikt", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "add buton klikt", Toast.LENGTH_LONG).show();
+                Intent addIntent = new Intent(getContext(), AddActivity.class);
+                startActivity(addIntent);
             }
         });
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         _dataRv.setLayoutManager(linearLayoutManager);
         _dataRv.setHasFixedSize(true);
+
+        DatabaseFiller dbFiller = new DatabaseFiller(getActivity());
+
+        Cursor testResult = getActivity().getContentResolver().query(CONTENT_URI, null, null, null, null);
+        if(testResult.getCount()==0){
+            dbFiller.AddValues();
+        }
 
         String projection[] = {"_ID", "firstname", "lastname"};
         Cursor myData = getActivity().getContentResolver().query(CONTENT_URI, projection, null, null, null);
@@ -52,6 +63,15 @@ public class MainFragment extends Fragment implements MyDataAdapter.ListItemClic
         _dataRv.setAdapter(_dataAdapter);
 
         return rootView;
+    }
+    @Override
+    public void onResume() {
+
+        super.onResume();
+        Toast.makeText(getContext(), "onResume ", Toast.LENGTH_LONG).show();
+        String projection[] = {"_ID", "firstname", "lastname"};
+        Cursor myData = getActivity().getContentResolver().query(CONTENT_URI, projection, null, null, null);
+        _dataAdapter.setMyDataData(myData);
     }
 
     @Override

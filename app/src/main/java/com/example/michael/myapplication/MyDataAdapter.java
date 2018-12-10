@@ -80,4 +80,8 @@ public class MyDataAdapter extends RecyclerView.Adapter<MyDataAdapter.MyDataView
             _OnListItemClick.onListItemClick(position, id);
         }
     }
+     public void setMyDataData(Cursor cursor){
+         MyDataData = cursor;
+         notifyDataSetChanged();
+     }
 }
