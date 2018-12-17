@@ -1,11 +1,15 @@
 package com.example.michael.myapplication;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.michael.myapplication.utilities.DatabaseFiller;
@@ -16,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements MyDataAdapter.Lis
 
     RecyclerView _MyDataRv;
     MyDataAdapter _MyDataAdapter;
-    public static boolean _MasterDetail;
+    public static boolean _MasterDetail = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +38,10 @@ public class MainActivity extends AppCompatActivity implements MyDataAdapter.Lis
 
         if(findViewById(R.id.ll_twopane) != null) {
             _MasterDetail = true;
+        }else{
+            _MasterDetail = false;
+            Log.d("I", "MainActivity ==> _MasterDetail: " + MainActivity._MasterDetail );
         }
-
 
 /*
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -57,4 +63,5 @@ public class MainActivity extends AppCompatActivity implements MyDataAdapter.Lis
 //        startActivity(detailIntent);
 
     }
+
 }

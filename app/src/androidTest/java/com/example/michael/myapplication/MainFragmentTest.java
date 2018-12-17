@@ -1,5 +1,6 @@
 package com.example.michael.myapplication;
 
+import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.rule.ActivityTestRule;
@@ -35,8 +36,12 @@ public class MainFragmentTest {
         onView(withId(R.id.tv_lastname)).check(matches(withText("Struyf")));
     }
 
-    //TODO: addbutton test
-    //TODO: land error
-    //TODO: query orderBy
+    @Test
+    public void click_FP_button_Add() {
+
+        onView(withId(R.id.FPbAdd)).perform(ViewActions.click());
+
+        onView(withId(R.id.pb_save)).check(matches(withText("SAVE")));
+    }
 
 }

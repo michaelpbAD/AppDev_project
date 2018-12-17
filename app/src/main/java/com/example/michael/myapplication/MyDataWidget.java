@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 import com.example.michael.myapplication.data.MyDataContract;
@@ -59,6 +60,7 @@ public class MyDataWidget extends AppWidgetProvider {
         for (int appWidgetId : appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId);
         }
+        Log.d("I","onUpdateWidgets");
     }
 
     @Override

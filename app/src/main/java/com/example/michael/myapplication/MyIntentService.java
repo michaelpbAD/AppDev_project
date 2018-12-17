@@ -5,6 +5,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.Context;
+import android.util.Log;
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
@@ -68,6 +69,7 @@ public class MyIntentService extends IntentService {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(this, MyDataWidget.class));
         MyDataWidget.onUpdateWidgets(this, appWidgetManager, appWidgetIds);
+        Log.d("I","handleActionWup");
     }
 
     /**
